@@ -1,2 +1,155 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My weather application</title>
+    <style>
+    
+        #search {
+  background-color: #f9f7fe;
+  border: none;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  padding: 20px;
+  width: 75%;
+  border-radius: 6px;
+}
+
+#submit {
+  font-size: 15px;
+  margin-top: 15px;
+  padding: 19px;
+  border-radius: 8px;
+  background-color:rgb(136, 93, 241);
+  color: white;
+  border: none;
+}
+body {
+    background-color: whitesmoke;
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: white;
+    max-width: 600px;
+    margin: 60px auto; 
+    padding: 30px; 
+    border-radius: 10px; 
+    box-shadow: rgba(65, 50, 100, 0.08) 0px 30px 50px 0px;
+}
+
+h1 {
+  font-weight:800;
+  font-size: 35px;
+}
+p {
+  font-weight: lighter;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+strong {
+  color: #ec5a5a;
+}
+section {
+  display: flex;
+  justify-content: space-around;
+  justify-content: end;
+  font-weight: 800;
+  font-size: 60px;
+  position: relative;
+  bottom:50px;
+}
+section small {
+  position: relative;
+margin-top:15px;
+    font-size: 28px;
+    opacity: 0.9; 
+    font-weight: 500;
+}
+.emoji {
+font-size: 36px;
+position: relative;
+margin-top:15px;
+}
+a{
+color: rgb(136, 93, 241);
+cursor: pointer;
+display: inline;
+font-family: Roboto, sans-serif;
+}
+.weather-info { display: flex;
+justify-content: space-between;}
+
+    </style>
+  </head >
+  <body>
+    <div class="container">
+    <header>
+      <form id="city">
+        <input
+          type="search"placeholder="Enter a city.." required id="search"/>
+        <input type="submit" value="Search" id="submit" />
+      </form>
+    </header>
+    <main>
+      <br>
+          <h1>Paris</h1>
+          <div class="weather-info">
+          <p><span id="current-date">
+            Saturday 15:32</span>, moderate rain <br />
+            Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
+          </p>
+          <section>
+            <span class="emoji">☀️</span>14<small>°C</small width="1px" >
+        </div>
+    </main>
+    <footer>
+      <p>
+        This project was coded by
+        <a href="#" target="_blank">Fariba Yari</a> and is
+        <a href="#" target="_blank"> on GitHub</a> and
+        <a href="#" target="_blank">hosted on Netlify</a>
+      </p>
+    </footer>
+  </div>
+  <script>
+    let todayDate = new Date();
+  let day = todayDate.getDay();
+  let hour= todayDate.getHours()
+  let minute= todayDate.getMinutes()
+    let Currentday = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+ "Friday",
+  "Saturday",
+];
+let Today = Currentday[todayDate.getDay()];
+
+let formatedDate = `${Today} ${hour}:${minute}`;
+
+    let now = document.querySelector("#current-date");
+     now.innerHTML = formatedDate
+
+     function searchCity (){
+      event.preventDefault();
+  let inputCity = document.querySelector("#search");
+  console.log(inputCity.value);
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = (inputCity.value);
+     }
+
+     let search = document.querySelector("#city"); 
+     search.addEventListener("submit", searchCity);
+
+  </script>
+  </body>
+</html>
+
