@@ -13,8 +13,7 @@
   font-size: 16px;
   padding: 20px;
   width: 75%;
-  border-radius: 6px;
-}
+  border-radius: 6px;}
 
 #submit {
   font-size: 15px;
@@ -23,8 +22,7 @@
   border-radius: 8px;
   background-color:rgb(136, 93, 241);
   color: white;
-  border: none;
-}
+  border: none;}
 body {
     background-color: whitesmoke;
     font-family: Roboto, sans-serif;
